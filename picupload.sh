@@ -1,15 +1,5 @@
 #!/bin/bash
 
- 
-DATE="$(date +'%m-%d-%y')"
-STATE="$(adb get-state)"
-
-
-#picuploader caller script
-
-#poormans UDEV rules
-
-
 
 STATE="$(adb get-state)"
 
@@ -39,24 +29,26 @@ adb start-server
 adb wait-for-device
 
 
+
+
 adb get-state
 
 if [ "$STATE" != "device" ] ; then
 	
-	echo "damn" 
+		echo "waiting for device" 
 
-elif [ "$STATE" = "device" ] ; then 
+	elif [ "$STATE" = "device" ] ; then 
 
-	echo "Backing up photos"
+		echo "Backing up photos"
 
-		adb pull /sdcard/DCIM/Camera ~/Desktop/pic-backup
+			adb pull /sdcard/DCIM/Camera ~/Desktop/pic-backup
 
 				mv ~/Desktop/pic-backup/*.mp4 ~/Desktop/video-backup
 
 			./picupload.sh
 
-	fi
- echo "end"
+fi
+
 sleep 5
 
 ./picupload.sh
