@@ -1,4 +1,4 @@
-#camera-leech for linux
+# camera-leech for linux
 
 an automatic pic and video upload script for android phones 
 
@@ -9,7 +9,7 @@ automatically pulls camera folder when adb enabled device is connected
 separates pics and videos into files on desktop
 
 
-#future plans
+# future plans
 
 add support for pulling over wifi
 
